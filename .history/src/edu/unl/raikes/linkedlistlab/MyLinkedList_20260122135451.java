@@ -77,7 +77,7 @@ public class MyLinkedList<E> implements List<E> {
         if (head == null) {
             head = new Node(element);
         } else {
-            Node node = this.head;
+            Node node = head;
             // loop until the last node
             for (; node.next != null; node = node.next) {
             }
@@ -89,18 +89,10 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public void add(int index, E element) {
-        if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException();
-        }
-        
-        if (index == 0) {
-            head = new Node(element, head);
-        } else {
-            Node prevNode = this.getNode(index - 1);
-            Node newNode = new Node(element, prevNode.next);
-            prevNode.next = newNode;
-        }
-        
+        Node node = this.getNode(index);
+        Node newNode = new Node(element, node);
+        Node prNode = this.getNode(index - 1);
+        prNode.next = newNode;
         this.size++;
     }
 
@@ -223,47 +215,14 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public boolean remove(Object obj) {
-        if (head == null) {
-            return false;
-        }
-        
-        if (equals(obj, head.cargo)) {
-            head = head.next;
-            size--;
-            return true;
-        }
-        
-        Node node = head;
-        while (node.next != null) {
-            if (equals(obj, node.next.cargo)) {
-                node.next = node.next.next;
-                size--;
-                return true;
-            }
-            node = node.next;
-        }
-        
+        // TODO: fill this in
         return false;
     }
 
     @Override
     public E remove(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException();
-        }
-        
-        E removed;
-        if (index == 0) {
-            removed = head.cargo;
-            head = head.next;
-        } else {
-            Node prevNode = this.getNode(index - 1);
-            removed = prevNode.next.cargo;
-            prevNode.next = prevNode.next.next;
-        }
-        
-        size--;
-        return removed;
+        // TODO: fill this in
+        return null;
     }
 
     @Override

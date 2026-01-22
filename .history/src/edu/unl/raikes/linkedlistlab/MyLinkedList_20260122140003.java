@@ -223,47 +223,14 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public boolean remove(Object obj) {
-        if (head == null) {
-            return false;
-        }
-        
-        if (equals(obj, head.cargo)) {
-            head = head.next;
-            size--;
-            return true;
-        }
-        
-        Node node = head;
-        while (node.next != null) {
-            if (equals(obj, node.next.cargo)) {
-                node.next = node.next.next;
-                size--;
-                return true;
-            }
-            node = node.next;
-        }
-        
+        // TODO: fill this in
         return false;
     }
 
     @Override
     public E remove(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException();
-        }
-        
-        E removed;
-        if (index == 0) {
-            removed = head.cargo;
-            head = head.next;
-        } else {
-            Node prevNode = this.getNode(index - 1);
-            removed = prevNode.next.cargo;
-            prevNode.next = prevNode.next.next;
-        }
-        
-        size--;
-        return removed;
+        // TODO: fill this in
+        return null;
     }
 
     @Override

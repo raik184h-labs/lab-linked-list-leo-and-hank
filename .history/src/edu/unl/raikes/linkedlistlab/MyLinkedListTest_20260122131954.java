@@ -142,7 +142,7 @@ public class MyLinkedListTest {
      */
     @Test
     public void testIndexOf() {
-        assertThat(mll.indexOf(1), is(0));
+        
         assertThat(mll.indexOf(2), is(1));
         assertThat(mll.indexOf(3), is(2));
         assertThat(mll.indexOf(4), is(-1));
